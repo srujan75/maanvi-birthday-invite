@@ -1,236 +1,58 @@
-# React Business Website Builder
+# Claude Architecture Document: Maanvi's 1st Birthday Invite
 
-## Purpose
-Build production-ready business websites using:
-- React
-- Tailwind CSS
-- shadcn/ui
-- Responsive UI
-- Modern UX patterns
+## Project Overview
+A fully responsive, elegant birthday invitation webpage designed to celebrate Maanvi's 1st Birthday. The application serves as a digital invite featuring event details, a countdown, a photo gallery, an interactive venue map, and an RSVP system.
 
-Supports:
-- Real estate websites
-- E-commerce websites
-- Company websites
-- Admin dashboards
-- Landing pages
-- Portfolio sites
-- Booking systems
+## Folder Structure
+```
+Maanvi_Birthday_Invite/
+├── index.html        # Main HTML structure
+├── styles.css        # External stylesheet handling UI/UX & Responsive design
+├── script.js         # JavaScript logic (navigation, countdown, confetti, lightbox)
+├── Claude.md         # Architecture & instruction guide (this file)
+├── skill.md          # Skills & technical documentation
+└── Images/           # Image assets directory
+    ├── 0.jpeg
+    ├── 1.jpeg
+    ├── 2.jpeg
+    ...
+    └── 10.jpeg
+```
 
----
+## Image Ordering Rules
+- **CRITICAL**: Gallery images must be strictly ordered from `0.jpeg` to `10.jpeg`.
+- Do not shuffle or randomize image sequence.
+- Added a placeholder card at the end for "More Memories Coming Soon".
 
-## Workflow
+## Design Guidelines
+- **Theme**: Elegant, pastel birthday theme.
+- **Colors**:
+  - Soft Pink (`#e88aab` / `#d4688e`)
+  - Lavender (`#c3aed6` / `#e8dff5`)
+  - Gold Accents (`#d4a843`)
+  - Cream Background (`#fdf6f0`)
+- **Typography**: `Great Vibes` for headings, `Nunito` for body copy, `Playfair Display` for accents.
+- **UI Elements**: Soft shadows, rounded corners (`20px`), glassmorphism cards.
 
-### Phase 1 — Discovery
-Before coding:
-- Ask business type
-- Ask target users
-- Ask required pages/features
-- Ask branding/colors
-- Ask integrations (payments, maps, CRM, auth)
+## Responsive Requirements
+- Mobile-first approach implemented via CSS media queries.
+- Hamburger menu toggles top navigation on screens `< 768px`.
+- Gallery implements CSS Grid (`minmax(250px, 1fr)`) to fluidly adapt to container width.
+- Forms, maps, and hero text scale dynamically using `clamp()` and percentages.
 
-Generate:
-- Sitemap
-- Feature list
-- UI sections
-- Component plan
+## GitHub Workflow Instructions
+- Commits should follow conventional commits format (e.g., `feat:`, `style:`, `docs:`).
+- Code is kept in the `main` branch.
+- Ready for GitHub Pages deployment.
 
----
+## Coding Standards & Optimization Rules
+- **HTML**: Semantic tags used (`<nav>`, `<section>`, `<footer>`).
+- **CSS**: Code split from inline HTML to `styles.css`. Uses CSS Variables (`:root`) for maintainability.
+- **JavaScript**: Extracted to `script.js`. Logic is modularized.
+- **Performance**: 
+  - Images implement `loading="lazy"`.
+  - Used `IntersectionObserver` instead of scroll listeners for reveal animations.
 
-### Phase 2 — Architecture
-Design:
-- Folder structure
-- Reusable components
-- State management
-- API structure
-- Responsive layout
-
-Use:
-- React
-- Tailwind CSS
-- shadcn/ui
-- React Router
-- Axios/Fetch
-- React Hook Form
-- Zod validation
-
----
-
-### Phase 3 — Implementation
-Generate:
-- Clean production-ready code
-- Modular reusable components
-- Mobile-first responsive UI
-- SEO-friendly pages
-- Accessible UI (WCAG)
-
-Include:
-- Loading states
-- Error handling
-- Form validation
-- Toast notifications
-- Skeleton loaders
-
----
-
-## Real Estate Features
-
-Support:
-- Property listings
-- Property filters
-- Search by city/location
-- Property details page
-- Image gallery
-- Agent profiles
-- Contact forms
-- Google Maps integration
-- Mortgage calculator
-- Booking/scheduling visits
-- Admin property management
-
-Components:
-- PropertyCard
-- PropertyGrid
-- SearchFilter
-- AgentCard
-- InquiryForm
-- GallerySlider
-- PricingSection
-
----
-
-## Business Website Features
-
-Support:
-- Hero sections
-- Service pages
-- Testimonials
-- Pricing tables
-- Contact forms
-- FAQ
-- Blogs
-- Newsletter forms
-- Authentication
-- CMS integration
-
-Components:
-- Navbar
-- HeroBanner
-- FeatureGrid
-- PricingCard
-- TestimonialSlider
-- ContactSection
-- Footer
-
----
-
-## UI/UX Rules
-
-Always:
-- Use modern clean design
-- Use consistent spacing
-- Use responsive layouts
-- Optimize performance
-- Use semantic HTML
-- Ensure accessibility
-
-Prefer:
-- Card layouts
-- Soft shadows
-- Rounded corners
-- Grid systems
-- Reusable sections
-
----
-
-## Performance Rules
-
-Implement:
-- Lazy loading
-- Code splitting
-- Image optimization
-- Pagination/infinite scroll
-- Debounced search
-- Memoization where needed
-
----
-
-## Security Rules
-
-Include:
-- Input validation
-- XSS protection
-- Secure auth handling
-- Protected routes
-- Environment variables
-
----
-
-## Testing
-
-Use:
-- Jest
-- React Testing Library
-- Playwright/Cypress
-
-Generate:
-- Unit tests
-- Form validation tests
-- Component tests
-
----
-
-## Deployment
-
-Support:
-- Vercel
-- Netlify
-- Azure
-- AWS
-
-Include:
-- Build steps
-- Environment setup
-- CI/CD guidance
-- Production optimization
-
----
-
-## Output Rules
-
-Always:
-- Generate scalable code
-- Explain architecture briefly
-- Keep components modular
-- Avoid unnecessary dependencies
-- Prefer reusable patterns
-- Keep code readable
-
-When possible:
-- Generate full folder structure
-- Include sample API data
-- Include responsive design
-- Include SEO metadata
-
----
-
-## Current Project Progress: Maanvi Properties (Anantapur Real Estate)
-
-**Project Summary:**
-Successfully developed and deployed a lightweight, elegant React-based real estate platform tailored for Anantapur. 
-
-**Key Milestones Achieved:**
-1. **Setup & Architecture:** Initialized Vite + React project. Maintained simplicity per user request by avoiding complex frameworks, relying instead on pure React state and custom Vanilla CSS (Sky Blue & Pearl theme).
-2. **Core Features Developed:**
-   - Multi-tab navigation (Home, Buy Properties, Gallery, Contact) managed via React `useState`.
-   - Dynamic sub-pages for individual property listings.
-   - Beautiful, responsive property information cards displaying realistic Indian real estate data (Prices in ₹, BHK configs, Sq.ft areas).
-3. **Asset Management:** Generated and integrated high-quality, AI-generated real estate imagery (Independent House, Apartment, Residential Plot) and fixed relative path routing issues for production.
-4. **Deployment & Hosting:** 
-   - Initialized Git, committed code, and pushed to GitHub: [https://github.com/srujan75/Realestate-web-Page](https://github.com/srujan75/Realestate-web-Page).
-   - Configured Vite `base` and hardcoded absolute paths (`/Realestate-web-Page/`) to ensure bulletproof asset loading on GitHub Pages.
-   - Deployed the live production website: [https://srujan75.github.io/Realestate-web-Page/](https://srujan75.github.io/Realestate-web-Page/).
-5. **Final Cleanup:**
-   - Removed unused Vite boilerplate (`src/assets/`, `App.css`).
-   - Removed legacy `maanvi-` portrait images from the `public/` directory.
-   - Updated `index.html` metadata and document title to correctly reflect "Maanvi Properties - Anantapur Real Estate".
+## Future Enhancement Notes
+- Add backend service (e.g., Google Sheets integration) to replace static RSVP form submission.
+- Enable automatic dynamic image loading in the gallery instead of hardcoding items.

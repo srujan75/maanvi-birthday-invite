@@ -5,386 +5,237 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maanvi's 1st Birthday 🎂</title>
   <meta name="description" content="You're invited to celebrate Maanvi's 1st Birthday! Join us on June 2nd, 2026 at Rayudu Inn, Anantapur.">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink: #e91e8c;
-      --pink-light: #ff6bc1;
-      --gold: #f9a825;
-      --cream: #fff8f0;
-      --deep: #4a0030;
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Nunito',sans-serif;background:var(--cream);overflow-x:hidden;color:var(--deep);}
-
-    /* ── CONFETTI CANVAS ── */
-    #confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;}
-
-    /* ── HERO ── */
-    .hero{
-      min-height:100vh;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,#1a0010 0%,#3d0030 40%,#6b003f 100%);
-      position:relative;text-align:center;overflow:hidden;
-    }
-    .hero-bubbles span{
-      position:absolute;border-radius:50%;opacity:.15;animation:float 8s infinite ease-in-out;
-      background:var(--pink-light);
-    }
-    .hero-bubbles span:nth-child(1){width:300px;height:300px;top:-80px;left:-80px;animation-delay:0s;}
-    .hero-bubbles span:nth-child(2){width:200px;height:200px;bottom:-60px;right:-60px;animation-delay:2s;}
-    .hero-bubbles span:nth-child(3){width:150px;height:150px;top:50%;left:10%;animation-delay:4s;}
-    @keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.1);}}
-
-    .hero-card{
-      position:relative;z-index:2;
-      background:rgba(255,255,255,.08);
-      backdrop-filter:blur(18px);
-      border:1.5px solid rgba(255,255,255,.2);
-      border-radius:40px;
-      padding:60px 50px;
-      max-width:700px;width:90%;
-      box-shadow:0 30px 80px rgba(0,0,0,.4);
-      animation:popIn 1.2s cubic-bezier(.175,.885,.32,1.275);
-    }
-    @keyframes popIn{from{opacity:0;transform:scale(.7);}to{opacity:1;transform:scale(1);}}
-
-    .badge{
-      display:inline-block;background:var(--gold);color:#fff;
-      font-weight:800;font-size:.85rem;letter-spacing:2px;
-      text-transform:uppercase;padding:6px 20px;border-radius:50px;
-      margin-bottom:20px;box-shadow:0 4px 15px rgba(249,168,37,.5);
-    }
-    .hero h1{
-      font-family:'Great Vibes',cursive;font-size:clamp(3.5rem,10vw,7rem);
-      color:#fff;line-height:1.1;
-      text-shadow:0 0 40px rgba(233,30,140,.6);
-    }
-    .hero-sub{color:rgba(255,255,255,.85);font-size:1.2rem;font-weight:700;letter-spacing:2px;margin-top:12px;}
-    .hero-emoji{font-size:3rem;margin:20px 0;display:block;animation:bounce 1.5s infinite;}
-    @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-
-    /* ── COUNTDOWN ── */
-    .countdown-section{
-      background:linear-gradient(135deg,var(--pink),var(--pink-light));
-      padding:60px 20px;text-align:center;
-    }
-    .countdown-section h2{color:#fff;font-size:1.5rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:30px;opacity:.9;}
-    .countdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-    .count-box{
-      background:rgba(255,255,255,.2);backdrop-filter:blur(10px);
-      border:1.5px solid rgba(255,255,255,.3);
-      border-radius:20px;padding:20px 30px;min-width:90px;
-    }
-    .count-num{display:block;font-size:3rem;font-weight:800;color:#fff;line-height:1;}
-    .count-label{display:block;color:rgba(255,255,255,.8);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-top:5px;}
-
-    /* ── DETAILS ── */
-    .details{padding:100px 20px;text-align:center;background:var(--cream);}
-    .section-title{font-family:'Great Vibes',cursive;font-size:clamp(2.5rem,6vw,4.5rem);color:var(--pink);margin-bottom:50px;}
-    .cards{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
-    .card{
-      background:#fff;border-radius:28px;padding:45px 35px;width:300px;
-      box-shadow:0 15px 40px rgba(233,30,140,.1);
-      border:2px solid rgba(233,30,140,.1);
-      transition:transform .3s,box-shadow .3s;
-    }
-    .card:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(233,30,140,.2);}
-    .card-icon{font-size:3rem;margin-bottom:15px;display:block;}
-    .card h3{font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--pink);margin-bottom:12px;}
-    .card p{line-height:1.9;font-size:1.05rem;font-weight:600;color:#6b4c5e;}
-    .map-btn{
-      display:inline-block;margin-top:18px;padding:12px 28px;
-      background:linear-gradient(135deg,var(--pink),var(--pink-light));
-      color:#fff;border-radius:50px;text-decoration:none;
-      font-weight:700;font-size:.95rem;
-      box-shadow:0 6px 20px rgba(233,30,140,.35);
-      transition:transform .2s,box-shadow .2s;
-    }
-    .map-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(233,30,140,.5);}
-
-    /* ── GALLERY ── */
-    .gallery-section{padding:100px 20px;background:#fff;text-align:center;}
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:20px;max-width:1100px;margin:0 auto;
-    }
-    .gallery-item{
-      position:relative;overflow:hidden;border-radius:20px;
-      aspect-ratio:1;cursor:pointer;
-      box-shadow:0 10px 30px rgba(233,30,140,.12);
-      border:3px solid #fff;
-      transition:transform .35s,box-shadow .35s;
-    }
-    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-    .gallery-item:hover{transform:scale(1.04);box-shadow:0 20px 50px rgba(233,30,140,.25);}
-    .gallery-item:hover img{transform:scale(1.12);}
-    .gallery-overlay{
-      position:absolute;inset:0;background:linear-gradient(to top,rgba(74,0,48,.7),transparent);
-      opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding:15px;
-    }
-    .gallery-item:hover .gallery-overlay{opacity:1;}
-    .gallery-overlay span{color:#fff;font-size:1.8rem;}
-
-    /* ── LIGHTBOX ── */
-    .lightbox{
-      display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);
-      z-index:9000;align-items:center;justify-content:center;
-    }
-    .lightbox.open{display:flex;}
-    .lightbox img{max-width:90vw;max-height:90vh;border-radius:16px;box-shadow:0 0 80px rgba(233,30,140,.4);}
-    .lb-close{
-      position:absolute;top:20px;right:30px;color:#fff;font-size:2.5rem;
-      cursor:pointer;background:none;border:none;line-height:1;
-    }
-    .lb-prev,.lb-next{
-      position:absolute;top:50%;transform:translateY(-50%);
-      background:rgba(255,255,255,.15);border:none;color:#fff;
-      font-size:2rem;padding:12px 18px;border-radius:12px;cursor:pointer;
-      transition:background .2s;
-    }
-    .lb-prev{left:20px;}.lb-next{right:20px;}
-    .lb-prev:hover,.lb-next:hover{background:rgba(233,30,140,.5);}
-
-    /* ── RSVP ── */
-    .rsvp{
-      padding:100px 20px;text-align:center;
-      background:linear-gradient(135deg,#1a0010,#3d0030);
-    }
-    .rsvp .section-title{color:#fff;}
-    .rsvp p{color:rgba(255,255,255,.8);font-size:1.2rem;font-weight:600;margin-bottom:40px;}
-    .rsvp-btn{
-      display:inline-block;padding:20px 60px;
-      background:linear-gradient(135deg,var(--gold),#ffcc02);
-      color:var(--deep);border-radius:50px;text-decoration:none;
-      font-weight:800;font-size:1.15rem;letter-spacing:1px;
-      box-shadow:0 10px 35px rgba(249,168,37,.45);
-      transition:transform .25s,box-shadow .25s;
-    }
-    .rsvp-btn:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 18px 45px rgba(249,168,37,.65);}
-
-    /* ── FOOTER ── */
-    footer{
-      background:var(--deep);color:rgba(255,255,255,.7);
-      text-align:center;padding:30px;font-size:1rem;font-weight:600;
-    }
-    footer span{color:var(--pink-light);}
-
-    /* ── SCROLL REVEAL ── */
-    .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-
-    /* ── RESPONSIVE ── */
-    @media(max-width:600px){
-      .hero-card{padding:40px 25px;}
-      .card{width:100%;max-width:340px;}
-      .count-box{padding:15px 20px;min-width:70px;}
-      .count-num{font-size:2.2rem;}
-      .lb-prev{left:8px;}.lb-next{right:8px;}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<canvas id="confetti-canvas"></canvas>
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Maanvi 🌸</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bubbles">
-    <span></span><span></span><span></span>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-decor">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-card">
+      <div class="hero-badge">You're Invited! 🌸</div>
+      <h1>Maanvi's<br>1st Birthday</h1>
+      <span class="hero-emoji">🎂</span>
+      <p class="hero-sub">A Year of Joy, Love &amp; Laughter</p>
+      
+      <p class="hero-welcome">
+        Maanvi is turning ONE and we would love to celebrate this magical milestone with you. 
+        Join us for a joyful evening filled with laughter, love, memories, food, music, and celebrations.
+        Your presence will make this special day even more memorable for our family.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+        <a href="#rsvp" class="btn btn-pink">RSVP Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <h2>⏳ Counting Down to the Big Day</h2>
+    <div class="countdown">
+      <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
+      <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
+      <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutes</span></div>
+      <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery-section">
+    <h2 class="section-title reveal">Sweet Memories 🌸</h2>
+    <p class="section-subtitle reveal">Capturing beautiful moments from Maanvi's first magical year. Click any photo to view full size.</p>
+    
+    <div class="gallery-grid" id="gallery-container">
+      <div class="gallery-item reveal" onclick="openLightbox(0)">
+        <img src="Images/0.jpeg" alt="Maanvi Memory 1" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(1)">
+        <img src="Images/1.jpeg" alt="Maanvi Memory 2" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(2)">
+        <img src="Images/2.jpeg" alt="Maanvi Memory 3" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(3)">
+        <img src="Images/3.jpeg" alt="Maanvi Memory 4" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(4)">
+        <img src="Images/4.jpeg" alt="Maanvi Memory 5" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(5)">
+        <img src="Images/5.jpg" alt="Maanvi Memory 6" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(6)">
+        <img src="Images/6.jpeg" alt="Maanvi Memory 7" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(7)">
+        <img src="Images/7.jpeg" alt="Maanvi Memory 8" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(8)">
+        <img src="Images/8.jpeg" alt="Maanvi Memory 9" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(9)">
+        <img src="Images/9.jpeg" alt="Maanvi Memory 10" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(10)">
+        <img src="Images/10.jpeg" alt="Maanvi Memory 11" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+
+      <!-- Placeholder for future uploads -->
+      <div class="gallery-placeholder reveal">
+        <span class="placeholder-icon">📸</span>
+        <span>More Memories<br>Coming Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="shiftLightbox(-1)">‹</button>
+    <img id="lb-img" src="" alt="Photo">
+    <button class="lb-next" onclick="shiftLightbox(1)">›</button>
   </div>
-  <div class="hero-card">
-    <div class="badge">You're Invited! 🌸</div>
-    <h1>Maanvi's<br>1st Birthday</h1>
-    <span class="hero-emoji">🎂</span>
-    <p class="hero-sub">A Year of Joy, Love &amp; Laughter</p>
-  </div>
-</section>
 
-<!-- COUNTDOWN -->
-<section class="countdown-section">
-  <h2>⏳ Counting Down to the Big Day</h2>
-  <div class="countdown">
-    <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
-    <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
-    <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutes</span></div>
-    <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Seconds</span></div>
-  </div>
-</section>
+  <!-- VENUE -->
+  <section id="venue" class="venue-section">
+    <h2 class="section-title reveal">When &amp; Where</h2>
+    <p class="section-subtitle reveal">We can't wait to welcome you to our special celebration.</p>
+    
+    <div class="venue-grid">
+      <!-- Venue Details -->
+      <div class="venue-card reveal">
+        <h3>Rayudu Inn</h3>
+        
+        <div class="venue-detail">
+          <span class="v-icon">📅</span>
+          <div>
+            <strong>Date & Time</strong><br>
+            Tuesday, June 2nd, 2026<br>
+            Evening Celebrations Start at 6:00 PM
+          </div>
+        </div>
 
-<!-- DETAILS -->
-<section class="details">
-  <h2 class="section-title reveal">When &amp; Where</h2>
-  <div class="cards">
-    <div class="card reveal">
-      <span class="card-icon">📅</span>
-      <h3>Date &amp; Time</h3>
-      <p><strong>Tuesday, June 2nd, 2026</strong><br>Please join us as we celebrate<br>Maanvi turning one!</p>
-    </div>
-    <div class="card reveal">
-      <span class="card-icon">📍</span>
-      <h3>Venue</h3>
-      <p><strong>Rayudu Inn</strong><br>Gooty Rd, opp. SSS Bar<br>Yerranela Kottala, Anantapur<br>Andhra Pradesh 515005</p>
-      <a href="https://maps.google.com/?q=Rayudu+Inn+Gooty+Rd+Anantapur+515005" target="_blank" class="map-btn">📌 Open in Maps</a>
-    </div>
-  </div>
-</section>
+        <div class="venue-detail">
+          <span class="v-icon">📍</span>
+          <div>
+            <strong>Address</strong><br>
+            Gooty Rd, Opposite SSS Bar<br>
+            Yerranela Kottala, Anantapur<br>
+            Andhra Pradesh 515005
+          </div>
+        </div>
 
-<!-- GALLERY -->
-<section class="gallery-section">
-  <h2 class="section-title reveal">Sweet Memories 🌸</h2>
-  <div class="gallery-grid" id="gallery">
-    <div class="gallery-item reveal" onclick="openLightbox(0)">
-      <img src="Images/Ma 3.jpeg" alt="Maanvi Memory 1" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(1)">
-      <img src="Images/Ma 4.jpeg" alt="Maanvi Memory 2" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(2)">
-      <img src="Images/Ma 5.jpeg" alt="Maanvi Memory 3" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(3)">
-      <img src="Images/Ma 6.jpeg" alt="Maanvi Memory 4" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(4)">
-      <img src="Images/Ma 7.jpeg" alt="Maanvi Memory 5" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(5)">
-      <img src="Images/Ma 8.jpeg" alt="Maanvi Memory 6" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(6)">
-      <img src="Images/Ma 9.jpeg" alt="Maanvi Memory 7" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(7)">
-      <img src="Images/Ma 10.jpeg" alt="Maanvi Memory 8" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(8)">
-      <img src="Images/WhatsApp Image 2026-04-29 at 15.38.50.jpeg" alt="Maanvi Memory 9" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-    <div class="gallery-item reveal" onclick="openLightbox(9)">
-      <img src="Images/WhatsApp Image 2026-04-29 at 15.44.52.jpeg" alt="Maanvi Memory 10" loading="lazy">
-      <div class="gallery-overlay"><span>🔍</span></div>
-    </div>
-  </div>
-</section>
+        <div class="venue-detail">
+          <span class="v-icon">🚗</span>
+          <div>
+            <strong>Parking Information</strong><br>
+            Ample free parking is available at the venue premises for all guests.
+          </div>
+        </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lb-close" onclick="closeLightbox()">✕</button>
-  <button class="lb-prev" onclick="shiftLightbox(-1)">‹</button>
-  <img id="lb-img" src="" alt="Photo">
-  <button class="lb-next" onclick="shiftLightbox(1)">›</button>
-</div>
+        <div class="venue-actions">
+          <a href="https://maps.google.com/?q=Rayudu+Inn+Gooty+Rd+Anantapur+515005" target="_blank" class="btn btn-gold">📌 Get Directions</a>
+        </div>
+      </div>
 
-<!-- RSVP -->
-<section class="rsvp">
-  <h2 class="section-title reveal">We Hope You Can Make It! 🎉</h2>
-  <p class="reveal">Please let us know if you'll be joining the celebration.</p>
-  <a href="https://wa.me/919999999999?text=Hi!%20I%27d%20love%20to%20attend%20Maanvi%27s%201st%20Birthday%20on%20June%202nd%202026%20%F0%9F%8E%82" target="_blank" class="rsvp-btn reveal">💬 RSVP via WhatsApp</a>
-</section>
+      <!-- Google Maps Embed Placeholder -->
+      <div class="venue-map reveal">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.274092790757!2d77.58788!3d14.68538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14b0b14c1e4db%3A0x8035a9686ddabf0b!2sAnantapur%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>Made with <span>❤️</span> for Maanvi's special day &nbsp;🎂&nbsp; June 2, 2026</p>
-</footer>
+  <!-- RSVP -->
+  <section id="rsvp" class="rsvp-section">
+    <h2 class="section-title reveal">We Hope You Can Make It! 🎉</h2>
+    <p class="section-subtitle reveal">Please let us know if you'll be joining the celebration.</p>
+    
+    <div class="rsvp-card reveal">
+      
+      <div id="form-container">
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="rsvp-name">Full Name</label>
+            <input type="text" id="rsvp-name" placeholder="John Doe" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="rsvp-count">Number of Guests</label>
+            <select id="rsvp-count" required>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5+">5+ People</option>
+            </select>
+          </div>
 
-<script>
-// ── CONFETTI ──
-const canvas = document.getElementById('confetti-canvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+          <div class="form-group">
+            <label for="rsvp-phone">Phone Number</label>
+            <input type="tel" id="rsvp-phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
 
-const COLORS = ['#e91e8c','#ff6bc1','#f9a825','#ffcc02','#fff','#c2185b','#ff80ab'];
-const pieces = Array.from({length: 120}, () => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height - canvas.height,
-  r: Math.random() * 8 + 4,
-  d: Math.random() * 120 + 60,
-  color: COLORS[Math.floor(Math.random() * COLORS.length)],
-  tilt: Math.floor(Math.random() * 10) - 10,
-  tiltAngle: 0,
-  tiltAngleIncrement: (Math.random() * .07) + .05
-}));
+          <div class="form-group">
+            <label for="rsvp-message">Message for Maanvi (Optional)</label>
+            <textarea id="rsvp-message" placeholder="Can't wait to celebrate!"></textarea>
+          </div>
 
-let angle = 0;
-function drawConfetti() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  angle += 0.01;
-  pieces.forEach(p => {
-    p.tiltAngle += p.tiltAngleIncrement;
-    p.y += (Math.cos(angle + p.d) + 1.5);
-    p.x += Math.sin(angle);
-    p.tilt = Math.sin(p.tiltAngle) * 15;
-    if (p.y > canvas.height) { p.x = Math.random() * canvas.width; p.y = -20; }
-    ctx.beginPath();
-    ctx.lineWidth = p.r / 2;
-    ctx.strokeStyle = p.color;
-    ctx.moveTo(p.x + p.tilt + p.r / 4, p.y);
-    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 4);
-    ctx.stroke();
-  });
-  requestAnimationFrame(drawConfetti);
-}
-drawConfetti();
+          <div class="rsvp-buttons">
+            <button type="submit" class="btn btn-gold">Submit RSVP</button>
+            <button type="button" id="whatsapp-btn" class="btn btn-whatsapp">💬 RSVP via WhatsApp</button>
+          </div>
+        </form>
+      </div>
 
-// ── COUNTDOWN ──
-function updateCountdown() {
-  const target = new Date('2026-06-02T10:00:00+05:30').getTime();
-  const now = Date.now();
-  const diff = Math.max(target - now, 0);
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
+      <div id="thank-you-message" class="rsvp-thankyou">
+        <span class="ty-icon">🎊</span>
+        <h3>Thank You!</h3>
+        <p>Your RSVP has been received. We look forward to seeing you at the celebration!</p>
+      </div>
 
-// ── LIGHTBOX ──
-const images = [
-  'Images/Ma 3.jpeg','Images/Ma 4.jpeg','Images/Ma 5.jpeg','Images/Ma 6.jpeg',
-  'Images/Ma 7.jpeg','Images/Ma 8.jpeg','Images/Ma 9.jpeg','Images/Ma 10.jpeg',
-  'Images/WhatsApp Image 2026-04-29 at 15.38.50.jpeg',
-  'Images/WhatsApp Image 2026-04-29 at 15.44.52.jpeg'
-];
-let currentIdx = 0;
-function openLightbox(idx) {
-  currentIdx = idx;
-  document.getElementById('lb-img').src = images[idx];
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function shiftLightbox(dir) {
-  currentIdx = (currentIdx + dir + images.length) % images.length;
-  document.getElementById('lb-img').src = images[currentIdx];
-}
-document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id === 'lightbox') closeLightbox(); });
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); if(e.key === 'ArrowRight') shiftLightbox(1); if(e.key === 'ArrowLeft') shiftLightbox(-1); });
+    </div>
+  </section>
 
-// ── SCROLL REVEAL ──
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
+  <footer>
+    <p>Made with <span>❤️</span> for Maanvi's special day &nbsp;🎂&nbsp; June 2, 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
