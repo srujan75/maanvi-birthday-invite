@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maanvi's 1st Birthday 🎂</title>
   <meta name="description" content="You're invited to celebrate Maanvi's 1st Birthday! Join us on June 2nd, 2026 at Rayudu Inn, Anantapur.">
+  <meta name="theme-color" content="#e88aab">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="page-loader" role="status" aria-label="Loading">
+    <div class="loader-spinner"></div>
+    <p class="loader-text">Maanvi 🌸</p>
+  </div>
+
   <!-- NAVIGATION -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo">Maanvi 🌸</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <a href="#home" class="nav-logo" aria-label="Maanvi Birthday Home">Maanvi 🌸</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#gallery">Photo Gallery</a></li>
         <li><a href="#venue">Venue</a></li>
@@ -25,25 +32,23 @@
     </div>
   </nav>
 
-  <canvas id="confetti-canvas"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 
   <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-decor">
+  <section id="home" class="hero" aria-label="Hero banner">
+    <div class="hero-decor" aria-hidden="true">
       <span></span><span></span><span></span><span></span>
     </div>
     <div class="hero-card">
       <div class="hero-badge">You're Invited! 🌸</div>
       <h1>Maanvi's<br>1st Birthday</h1>
-      <span class="hero-emoji">🎂</span>
+      <span class="hero-emoji" aria-hidden="true">🎂</span>
       <p class="hero-sub">A Year of Joy, Love &amp; Laughter</p>
-      
       <p class="hero-welcome">
-        Maanvi is turning ONE and we would love to celebrate this magical milestone with you. 
+        Maanvi is turning ONE and we would love to celebrate this magical milestone with you.
         Join us for a joyful evening filled with laughter, love, memories, food, music, and celebrations.
         Your presence will make this special day even more memorable for our family.
       </p>
-
       <div class="hero-cta">
         <a href="#gallery" class="btn btn-outline">View Gallery</a>
         <a href="#rsvp" class="btn btn-pink">RSVP Now</a>
@@ -52,9 +57,9 @@
   </section>
 
   <!-- COUNTDOWN -->
-  <section class="countdown-section">
+  <section class="countdown-section" aria-label="Countdown to birthday">
     <h2>⏳ Counting Down to the Big Day</h2>
-    <div class="countdown">
+    <div class="countdown" role="timer" aria-live="polite">
       <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
       <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
       <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutes</span></div>
@@ -63,93 +68,88 @@
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="gallery-section">
+  <section id="gallery" class="gallery-section" aria-label="Photo gallery">
     <h2 class="section-title reveal">Sweet Memories 🌸</h2>
     <p class="section-subtitle reveal">Capturing beautiful moments from Maanvi's first magical year. Click any photo to view full size.</p>
-    
-    <div class="gallery-grid" id="gallery-container">
-      <div class="gallery-item reveal" onclick="openLightbox(0)">
-        <img src="Images/0.jpeg" alt="Maanvi Memory 1" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(1)">
-        <img src="Images/1.jpeg" alt="Maanvi Memory 2" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(2)">
-        <img src="Images/2.jpeg" alt="Maanvi Memory 3" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(3)">
-        <img src="Images/3.jpeg" alt="Maanvi Memory 4" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(4)">
-        <img src="Images/4.jpeg" alt="Maanvi Memory 5" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(5)">
-        <img src="Images/5.jpg" alt="Maanvi Memory 6" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(6)">
-        <img src="Images/6.jpeg" alt="Maanvi Memory 7" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(7)">
-        <img src="Images/7.jpeg" alt="Maanvi Memory 8" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(8)">
-        <img src="Images/8.jpeg" alt="Maanvi Memory 9" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(9)">
-        <img src="Images/9.jpeg" alt="Maanvi Memory 10" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(10)">
-        <img src="Images/10.jpeg" alt="Maanvi Memory 11" loading="lazy">
-        <div class="gallery-overlay"><span>🔍</span></div>
-      </div>
 
-      <!-- Placeholder for future uploads -->
-      <div class="gallery-placeholder reveal">
-        <span class="placeholder-icon">📸</span>
+    <div class="gallery-grid" id="gallery-container" role="list">
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(0)" tabindex="0" aria-label="Maanvi Memory 1" onkeydown="if(event.key==='Enter')openLightbox(0)">
+        <img src="Images/0.jpeg" alt="Maanvi Memory 1" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(1)" tabindex="0" aria-label="Maanvi Memory 2" onkeydown="if(event.key==='Enter')openLightbox(1)">
+        <img src="Images/1.jpeg" alt="Maanvi Memory 2" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(2)" tabindex="0" aria-label="Maanvi Memory 3" onkeydown="if(event.key==='Enter')openLightbox(2)">
+        <img src="Images/2.jpeg" alt="Maanvi Memory 3" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(3)" tabindex="0" aria-label="Maanvi Memory 4" onkeydown="if(event.key==='Enter')openLightbox(3)">
+        <img src="Images/3.jpeg" alt="Maanvi Memory 4" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(4)" tabindex="0" aria-label="Maanvi Memory 5" onkeydown="if(event.key==='Enter')openLightbox(4)">
+        <img src="Images/4.jpeg" alt="Maanvi Memory 5" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(5)" tabindex="0" aria-label="Maanvi Memory 6" onkeydown="if(event.key==='Enter')openLightbox(5)">
+        <img src="Images/5.jpg" alt="Maanvi Memory 6" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(6)" tabindex="0" aria-label="Maanvi Memory 7" onkeydown="if(event.key==='Enter')openLightbox(6)">
+        <img src="Images/6.jpeg" alt="Maanvi Memory 7" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(7)" tabindex="0" aria-label="Maanvi Memory 8" onkeydown="if(event.key==='Enter')openLightbox(7)">
+        <img src="Images/7.jpeg" alt="Maanvi Memory 8" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(8)" tabindex="0" aria-label="Maanvi Memory 9" onkeydown="if(event.key==='Enter')openLightbox(8)">
+        <img src="Images/8.jpeg" alt="Maanvi Memory 9" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(9)" tabindex="0" aria-label="Maanvi Memory 10" onkeydown="if(event.key==='Enter')openLightbox(9)">
+        <img src="Images/9.jpeg" alt="Maanvi Memory 10" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" role="listitem" onclick="openLightbox(10)" tabindex="0" aria-label="Maanvi Memory 11" onkeydown="if(event.key==='Enter')openLightbox(10)">
+        <img src="Images/10.jpeg" alt="Maanvi Memory 11" loading="lazy">
+        <div class="gallery-overlay" aria-hidden="true"><span>🔍</span></div>
+      </div>
+      <div class="gallery-placeholder reveal" role="listitem" aria-label="More memories coming soon">
+        <span class="placeholder-icon" aria-hidden="true">📸</span>
         <span>More Memories<br>Coming Soon</span>
       </div>
     </div>
   </section>
 
   <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lb-close" onclick="closeLightbox()">✕</button>
-    <button class="lb-prev" onclick="shiftLightbox(-1)">‹</button>
-    <img id="lb-img" src="" alt="Photo">
-    <button class="lb-next" onclick="shiftLightbox(1)">›</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Close photo viewer">✕</button>
+    <button class="lb-prev" onclick="shiftLightbox(-1)" aria-label="Previous photo">‹</button>
+    <img id="lb-img" src="" alt="Photo enlarged view">
+    <button class="lb-next" onclick="shiftLightbox(1)" aria-label="Next photo">›</button>
   </div>
 
   <!-- VENUE -->
-  <section id="venue" class="venue-section">
+  <section id="venue" class="venue-section" aria-label="Venue information">
     <h2 class="section-title reveal">When &amp; Where</h2>
     <p class="section-subtitle reveal">We can't wait to welcome you to our special celebration.</p>
-    
+
     <div class="venue-grid">
-      <!-- Venue Details -->
       <div class="venue-card reveal">
         <h3>Rayudu Inn</h3>
-        
         <div class="venue-detail">
-          <span class="v-icon">📅</span>
+          <span class="v-icon" aria-hidden="true">📅</span>
           <div>
-            <strong>Date & Time</strong><br>
+            <strong>Date &amp; Time</strong><br>
             Tuesday, June 2nd, 2026<br>
             Evening Celebrations Start at 6:00 PM
           </div>
         </div>
-
         <div class="venue-detail">
-          <span class="v-icon">📍</span>
+          <span class="v-icon" aria-hidden="true">📍</span>
           <div>
             <strong>Address</strong><br>
             Gooty Rd, Opposite SSS Bar<br>
@@ -157,24 +157,22 @@
             Andhra Pradesh 515005
           </div>
         </div>
-
         <div class="venue-detail">
-          <span class="v-icon">🚗</span>
+          <span class="v-icon" aria-hidden="true">🚗</span>
           <div>
             <strong>Parking Information</strong><br>
             Ample free parking is available at the venue premises for all guests.
           </div>
         </div>
-
         <div class="venue-actions">
-          <a href="https://maps.google.com/?q=Rayudu+Inn+Gooty+Rd+Anantapur+515005" target="_blank" class="btn btn-gold">📌 Get Directions</a>
+          <a href="https://maps.google.com/?q=Rayudu+Inn+Gooty+Rd+Anantapur+515005" target="_blank" rel="noopener noreferrer" class="btn btn-gold">📌 Get Directions</a>
         </div>
       </div>
 
-      <!-- Google Maps Embed Placeholder -->
       <div class="venue-map reveal">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.274092790757!2d77.58788!3d14.68538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14b0b14c1e4db%3A0x8035a9686ddabf0b!2sAnantapur%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15442.274092790757!2d77.58788!3d14.68538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14b0b14c1e4db%3A0x8035a9686ddabf0b!2sAnantapur%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          title="Rayudu Inn location map"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -182,19 +180,17 @@
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="rsvp-section">
+  <section id="rsvp" class="rsvp-section" aria-label="RSVP form">
     <h2 class="section-title reveal">We Hope You Can Make It! 🎉</h2>
     <p class="section-subtitle reveal">Please let us know if you'll be joining the celebration.</p>
-    
+
     <div class="rsvp-card reveal">
-      
       <div id="form-container">
-        <form id="rsvp-form">
+        <form id="rsvp-form" novalidate>
           <div class="form-group">
             <label for="rsvp-name">Full Name</label>
-            <input type="text" id="rsvp-name" placeholder="John Doe" required>
+            <input type="text" id="rsvp-name" placeholder="John Doe" required autocomplete="name">
           </div>
-          
           <div class="form-group">
             <label for="rsvp-count">Number of Guests</label>
             <select id="rsvp-count" required>
@@ -205,17 +201,14 @@
               <option value="5+">5+ People</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="rsvp-phone">Phone Number</label>
-            <input type="tel" id="rsvp-phone" placeholder="+91 XXXXX XXXXX" required>
+            <input type="tel" id="rsvp-phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel">
           </div>
-
           <div class="form-group">
             <label for="rsvp-message">Message for Maanvi (Optional)</label>
             <textarea id="rsvp-message" placeholder="Can't wait to celebrate!"></textarea>
           </div>
-
           <div class="rsvp-buttons">
             <button type="submit" class="btn btn-gold">Submit RSVP</button>
             <button type="button" id="whatsapp-btn" class="btn btn-whatsapp">💬 RSVP via WhatsApp</button>
@@ -223,18 +216,20 @@
         </form>
       </div>
 
-      <div id="thank-you-message" class="rsvp-thankyou">
-        <span class="ty-icon">🎊</span>
+      <div id="thank-you-message" class="rsvp-thankyou" role="alert" aria-live="polite">
+        <span class="ty-icon" aria-hidden="true">🎊</span>
         <h3>Thank You!</h3>
         <p>Your RSVP has been received. We look forward to seeing you at the celebration!</p>
       </div>
-
     </div>
   </section>
 
-  <footer>
-    <p>Made with <span>❤️</span> for Maanvi's special day &nbsp;🎂&nbsp; June 2, 2026</p>
+  <footer role="contentinfo">
+    <p>Made with <span aria-hidden="true">❤️</span> for Maanvi's special day &nbsp;🎂&nbsp; June 2, 2026</p>
   </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
 
   <script src="script.js"></script>
 </body>

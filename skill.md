@@ -1,55 +1,86 @@
 # Project Skills & Technical Documentation
 
-## Skills Required
-- **Frontend Development**: HTML5, CSS3, JavaScript (ES6+).
-- **UI/UX Design**: Understanding of layout principles, color theory, typography hierarchy, and micro-interactions.
-- **Responsive Web Design**: Proficiency in Flexbox, CSS Grid, media queries, and mobile-first methodologies.
-- **Version Control**: Git workflow, committing, and GitHub branch management.
+## Skills Demonstrated
 
-## Frontend Technologies Used
-- **HTML5**: Semantic document structure.
-- **CSS3**: Custom styling, CSS Variables, Animations (`@keyframes`), Transitions, Glassmorphism, CSS Grid, Flexbox.
-- **Vanilla JavaScript**: DOM manipulation, event listeners, canvas rendering (confetti), Intersection Observer API.
-- **External APIs**: Google Fonts (`Great Vibes`, `Nunito`, `Playfair Display`), Google Maps Embed API, WhatsApp click-to-chat API.
+### Responsive Web Design
+- Mobile-first CSS architecture (smallest → largest breakpoints)
+- CSS Grid with responsive column counts (`repeat(4,1fr)` → `repeat(2,1fr)` → `1fr`)
+- CSS Flexbox for navbar, hero CTA, countdown, form buttons
+- `clamp()` for fluid typography that scales between viewport limits
+- `aspect-ratio: 1/1` for uniform gallery cards without fixed heights
+- `overflow-x: hidden` to prevent horizontal scroll on all devices
+- Touch-friendly minimum tap targets (≥ 44px)
+- 5 breakpoints: 380px / 600px / 768px / 1024px / 1200px
 
-## Responsive Design Practices
-- Employed `clamp()` for fluid typography that scales automatically between viewport limits.
-- Implemented a responsive hamburger navigation for mobile screens (`max-width: 768px`).
-- Used CSS Grid with `auto-fill` and `minmax()` to create a self-adjusting photo gallery without media queries.
-- Ensured form inputs and buttons have minimum touch target sizes (`min-height: 44px` padding equivalents) for mobile accessibility.
+### HTML5
+- Semantic elements: `<nav>`, `<section>`, `<footer>`, `<form>`, `<figure>`
+- ARIA attributes: `role`, `aria-label`, `aria-modal`, `aria-expanded`, `aria-live`, `aria-hidden`
+- Keyboard accessibility: `tabindex="0"`, `onkeydown` for gallery items
+- `novalidate` + custom validation flow on RSVP form
+- Lazy loading images with `loading="lazy"`
+- Proper `autocomplete` attributes on form inputs
+- `rel="noopener noreferrer"` on external links
 
-## UI/UX Principles
-- **Visual Hierarchy**: Utilized font sizes, weights, and colors to guide the user's eye from the Hero section to the call-to-action buttons.
-- **Aesthetics**: Maintained a consistent pastel color palette (Pink, Lavender, Gold, Cream) appropriate for a 1st birthday theme.
-- **Feedback**: Added hover effects on all interactive elements (buttons, gallery images, navigation links) and soft pop-in animations on scroll to keep the interface feeling alive.
-- **Whitespace**: Generous padding and margins (`90px` section spacing) to prevent clutter and ensure elegance.
+### CSS3
+- CSS Custom Properties (variables) for design tokens
+- Glassmorphism: `backdrop-filter: blur()` + semi-transparent backgrounds
+- `@keyframes` animations: `cardPop`, `floatBubble`, `softBounce`, `spin`
+- CSS Grid & Flexbox layouts
+- `transition` on transforms, opacity, box-shadow, border-color
+- `clamp()` for responsive font sizes
+- CSS `aspect-ratio` for square gallery items
+- Media queries at 5 breakpoints
 
-## Image Optimization Techniques
-- **Lazy Loading**: Applied `loading="lazy"` attribute to all gallery images to defer loading until they enter the viewport, improving initial page load speed.
-- **Aspect Ratio**: Enforced `aspect-ratio: 1` on gallery items to prevent layout shifts during image loading.
-- **Sizing**: Set images to `object-fit: cover` to ensure consistent grid presentation regardless of original image dimensions.
+### JavaScript (Vanilla ES6+)
+- DOM manipulation: `classList`, `style`, `setAttribute`
+- Intersection Observer API for scroll-reveal animations
+- Canvas API for confetti particle animation
+- `requestAnimationFrame` for smooth 60fps animation loop
+- `setInterval` for live countdown timer
+- Event delegation and keyboard event handling
+- `window.scrollTo()` for smooth scroll-to-top
+- Dynamic lightbox with keyboard arrow navigation
+- WhatsApp deep-link integration
+- Page load event for loader dismissal
 
-## Accessibility Practices
-- Included `aria-label` on non-text interactive elements (e.g., Hamburger button).
-- Ensured sufficient color contrast between text and background elements.
-- Used semantic HTML (`<nav>`, `<section>`, `<form>`) to aid screen readers.
+### UI/UX Design
+- Glassmorphism card UI across hero, RSVP, and navbar
+- Curated pastel palette: pink, lavender, gold, cream
+- Premium Google Fonts: Great Vibes, Nunito, Playfair Display
+- Micro-animations: hover lifts, scale transforms, bounce
+- Page loader for perceived performance
+- Confetti particle system for celebration feel
+- Scroll-to-top button with opacity transition
+- Active nav link highlighting on scroll
 
-## Performance Optimization
-- Extracted inline CSS and JavaScript into separate files (`styles.css`, `script.js`) to allow browser caching.
-- Used `IntersectionObserver` for scroll animations instead of binding expensive `scroll` event listeners.
-- Rendered confetti on a hardware-accelerated `<canvas>` element using `requestAnimationFrame`.
+### Performance Optimization
+- Lazy loading for all gallery images
+- Reduced confetti particle count (100) for mobile
+- `IntersectionObserver` unobserves after first reveal (no repeated checks)
+- Single CSS file, single JS file — no frameworks or libraries
+- Google Fonts loaded via single `@import` with `display=swap`
 
-## GitHub Deployment Workflow
-1. Initialize repository: `git init`
-2. Stage all files: `git add .`
-3. Commit features: `git commit -m "feat: complete UI/UX overhaul"`
-4. Push to remote main branch: `git push origin main`
-5. Enable GitHub Pages from repository settings targeting the `main` branch root.
+### Accessibility
+- Semantic HTML throughout
+- ARIA roles & labels on all interactive elements
+- Keyboard navigation: Tab + Enter for gallery, Escape/Arrow keys for lightbox
+- `aria-live="polite"` on countdown and RSVP thank-you
+- Sufficient color contrast (dark text on light backgrounds)
+- `alt` text on all images
+- `aria-hidden` on decorative emoji and icons
 
-## SEO Basics
-- Added descriptive `<title>` and `<meta name="description">` tags.
-- Kept semantic HTML structure with a single `<h1>` on the page and subsequent `<h2>`, `<h3>` tags indicating hierarchy.
+### Version Control & Deployment
+- Git workflow: commit → push to `main`
+- GitHub Pages deployment from repository root
+- `.gitignore` configured for OS and editor artifacts
 
-## Prompt Engineering Notes (Claude)
-- Designed prompts to be explicit regarding file output constraints, splitting logic, styling, and markup to prevent token limitations.
-- Enforced strict adherence to provided asset naming schemas (e.g., Image ordering).
+## Tech Stack Summary
+| Layer | Technology |
+|---|---|
+| Structure | HTML5 |
+| Styling | CSS3 (Flexbox + Grid + Variables) |
+| Logic | Vanilla JavaScript (ES6+) |
+| Fonts | Google Fonts API |
+| Maps | Google Maps Embed API |
+| Messaging | WhatsApp click-to-chat API |
+| Hosting | GitHub Pages |
