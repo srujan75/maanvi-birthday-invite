@@ -148,26 +148,7 @@ window.openLightbox  = openLightbox;
 window.closeLightbox = closeLightbox;
 window.shiftLightbox = shiftLightbox;
 
-// ── RSVP FORM ──
-const rsvpForm      = document.getElementById('rsvp-form');
-const formContainer = document.getElementById('form-container');
-const thankYou      = document.getElementById('thank-you-message');
-const whatsappBtn   = document.getElementById('whatsapp-btn');
 
-rsvpForm.addEventListener('submit', e => {
-  e.preventDefault();
-  formContainer.style.display = 'none';
-  thankYou.classList.add('show');
-});
-
-whatsappBtn.addEventListener('click', () => {
-  const name  = document.getElementById('rsvp-name').value  || 'Guest';
-  const count = document.getElementById('rsvp-count').value || '1';
-  const text  = encodeURIComponent(
-    `Hi! I'm ${name}. I'd love to attend Maanvi's 1st Birthday on June 2nd, 2026! 🎂 (Guests: ${count})`
-  );
-  window.open(`https://wa.me/919999999999?text=${text}`, '_blank', 'noopener,noreferrer');
-});
 
 // ── SCROLL REVEAL ──
 const revealObserver = new IntersectionObserver(entries => {

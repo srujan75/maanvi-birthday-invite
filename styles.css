@@ -85,16 +85,16 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text-da
 
 /* GALLERY */
 .gallery-section{padding:90px 20px;background:var(--white);text-align:center}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px;margin:0 auto}
-.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);cursor:pointer;box-shadow:0 8px 25px var(--shadow-pink);border:3px solid var(--white);transition:transform .35s,box-shadow .35s;aspect-ratio:1/1}
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gallery-grid{columns:4 250px;column-gap:18px;max-width:1100px;margin:0 auto}
+.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);cursor:pointer;box-shadow:0 8px 25px var(--shadow-pink);border:3px solid var(--white);transition:transform .35s,box-shadow .35s;break-inside:avoid;margin-bottom:18px}
+.gallery-item img{width:100%;height:auto;display:block;transition:transform .5s}
 .gallery-item:hover{transform:scale(1.03);box-shadow:0 16px 45px rgba(232,138,171,0.3)}
 .gallery-item:hover img{transform:scale(1.1)}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(61,44,62,0.65),transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding:16px}
 .gallery-item:hover .gallery-overlay{opacity:1}
 .gallery-overlay span{color:var(--white);font-size:1.6rem}
 
-.gallery-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--lavender-light);border:2px dashed var(--lavender);border-radius:var(--radius);aspect-ratio:1/1;padding:20px;color:var(--text-muted);font-weight:700;font-size:.9rem;gap:10px;transition:background .3s}
+.gallery-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--lavender-light);border:2px dashed var(--lavender);border-radius:var(--radius);min-height:250px;padding:20px;color:var(--text-muted);font-weight:700;font-size:.9rem;gap:10px;transition:background .3s;break-inside:avoid;margin-bottom:18px}
 .gallery-placeholder:hover{background:#efe5f7}
 .gallery-placeholder .placeholder-icon{font-size:2.4rem;opacity:.5}
 
@@ -120,26 +120,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text-da
 .venue-detail .v-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
 .venue-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* RSVP */
-.rsvp-section{padding:90px 20px;text-align:center;background:linear-gradient(160deg,#3d2c3e 0%,#5a3d5c 50%,#4a3050 100%)}
-.rsvp-section .section-title{color:var(--white)}
-.rsvp-section .section-subtitle{color:rgba(255,255,255,0.7)}
-.rsvp-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.15);border-radius:28px;padding:44px 40px;max-width:520px;margin:0 auto;box-shadow:0 20px 50px rgba(0,0,0,0.25);transition:transform .3s}
-.form-group{margin-bottom:18px;text-align:left}
-.form-group label{display:block;color:rgba(255,255,255,0.8);font-weight:700;font-size:.85rem;margin-bottom:6px;letter-spacing:.5px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:13px 18px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:14px;color:var(--white);font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:600;transition:border-color .3s,background .3s,transform .2s;outline:none}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.4)}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--pink);background:rgba(255,255,255,0.15);transform:scale(1.01)}
-.form-group textarea{resize:vertical;min-height:90px}
-.form-group select option{background:#3d2c3e;color:var(--white)}
-.rsvp-buttons{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;justify-content:center}
-.btn-whatsapp{background:linear-gradient(135deg,#25d366,#128c7e);color:var(--white);box-shadow:0 8px 25px rgba(37,211,102,0.35)}
-.btn-whatsapp:hover{box-shadow:0 12px 35px rgba(37,211,102,0.5)}
-.rsvp-thankyou{display:none;text-align:center;padding:40px 20px}
-.rsvp-thankyou.show{display:block;animation:cardPop .6s ease}
-.rsvp-thankyou .ty-icon{font-size:3.5rem;margin-bottom:16px;display:block}
-.rsvp-thankyou h3{font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--gold-light);margin-bottom:10px}
-.rsvp-thankyou p{color:rgba(255,255,255,0.7);font-weight:600}
+
 
 /* FOOTER */
 footer{background:#2d1f2e;color:rgba(255,255,255,0.6);text-align:center;padding:28px 20px;font-size:.9rem;font-weight:600}
@@ -159,13 +140,13 @@ footer span{color:var(--pink)}
 /* Large desktop */
 @media(min-width:1200px){
   .hero-card{padding:64px 56px}
-  .gallery-grid{grid-template-columns:repeat(4,1fr);gap:22px}
+  .gallery-grid{columns:4 300px;gap:22px}
   .venue-grid{gap:36px}
 }
 
 /* Tablet landscape */
 @media(max-width:1024px){
-  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery-grid{columns:3 200px}
 }
 
 /* Tablet portrait */
@@ -173,7 +154,7 @@ footer span{color:var(--pink)}
   .hamburger{display:flex}
   .nav-links{position:fixed;top:var(--nav-height);left:0;width:100%;background:rgba(253,246,240,0.97);backdrop-filter:blur(16px);flex-direction:column;align-items:center;padding:20px 0;gap:4px;transform:translateY(-120%);transition:transform .4s;box-shadow:0 10px 30px var(--shadow-pink)}
   .nav-links.open{transform:translateY(0)}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .gallery-grid{columns:2 150px;gap:14px}
   .venue-grid{grid-template-columns:1fr}
   .venue-map{min-height:240px}
 }
@@ -188,8 +169,7 @@ footer span{color:var(--pink)}
   .section-title{font-size:clamp(1.8rem,7vw,2.8rem)}
   .gallery-section{padding:60px 16px}
   .venue-section{padding:60px 16px}
-  .rsvp-section{padding:60px 16px}
-  .rsvp-card{padding:32px 22px}
+
   .btn{padding:12px 24px;font-size:.88rem}
   .lb-prev{left:6px}.lb-next{right:6px}
   .scroll-top{bottom:20px;right:20px;width:42px;height:42px;font-size:1.2rem}

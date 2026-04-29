@@ -4,31 +4,29 @@
 
 ### Responsive Web Design
 - Mobile-first CSS architecture (smallest → largest breakpoints)
-- CSS Grid with responsive column counts (`repeat(4,1fr)` → `repeat(2,1fr)` → `1fr`)
+- Masonry-style layout using CSS `columns` for optimal image fit
 - CSS Flexbox for navbar, hero CTA, countdown, form buttons
 - `clamp()` for fluid typography that scales between viewport limits
-- `aspect-ratio: 1/1` for uniform gallery cards without fixed heights
+- Adaptive masonry layout for uniform visual balance
 - `overflow-x: hidden` to prevent horizontal scroll on all devices
 - Touch-friendly minimum tap targets (≥ 44px)
 - 5 breakpoints: 380px / 600px / 768px / 1024px / 1200px
 
 ### HTML5
-- Semantic elements: `<nav>`, `<section>`, `<footer>`, `<form>`, `<figure>`
+- Semantic elements: `<nav>`, `<section>`, `<footer>`
 - ARIA attributes: `role`, `aria-label`, `aria-modal`, `aria-expanded`, `aria-live`, `aria-hidden`
 - Keyboard accessibility: `tabindex="0"`, `onkeydown` for gallery items
-- `novalidate` + custom validation flow on RSVP form
 - Lazy loading images with `loading="lazy"`
-- Proper `autocomplete` attributes on form inputs
 - `rel="noopener noreferrer"` on external links
 
 ### CSS3
 - CSS Custom Properties (variables) for design tokens
 - Glassmorphism: `backdrop-filter: blur()` + semi-transparent backgrounds
 - `@keyframes` animations: `cardPop`, `floatBubble`, `softBounce`, `spin`
-- CSS Grid & Flexbox layouts
+- Masonry columns & Flexbox layouts
 - `transition` on transforms, opacity, box-shadow, border-color
 - `clamp()` for responsive font sizes
-- CSS `aspect-ratio` for square gallery items
+- CSS transitions and animations for premium feel
 - Media queries at 5 breakpoints
 
 ### JavaScript (Vanilla ES6+)
@@ -40,11 +38,10 @@
 - Event delegation and keyboard event handling
 - `window.scrollTo()` for smooth scroll-to-top
 - Dynamic lightbox with keyboard arrow navigation
-- WhatsApp deep-link integration
 - Page load event for loader dismissal
 
 ### UI/UX Design
-- Glassmorphism card UI across hero, RSVP, and navbar
+- Glassmorphism card UI across hero and navbar
 - Curated pastel palette: pink, lavender, gold, cream
 - Premium Google Fonts: Great Vibes, Nunito, Playfair Display
 - Micro-animations: hover lifts, scale transforms, bounce
@@ -64,7 +61,7 @@
 - Semantic HTML throughout
 - ARIA roles & labels on all interactive elements
 - Keyboard navigation: Tab + Enter for gallery, Escape/Arrow keys for lightbox
-- `aria-live="polite"` on countdown and RSVP thank-you
+- `aria-live="polite"` on countdown timer
 - Sufficient color contrast (dark text on light backgrounds)
 - `alt` text on all images
 - `aria-hidden` on decorative emoji and icons
@@ -78,9 +75,8 @@
 | Layer | Technology |
 |---|---|
 | Structure | HTML5 |
-| Styling | CSS3 (Flexbox + Grid + Variables) |
+| Styling | CSS3 (Flexbox + Masonry + Variables) |
 | Logic | Vanilla JavaScript (ES6+) |
 | Fonts | Google Fonts API |
 | Maps | Google Maps Embed API |
-| Messaging | WhatsApp click-to-chat API |
 | Hosting | GitHub Pages |

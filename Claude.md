@@ -21,9 +21,8 @@ Maanvi_Birthday_Invite/
 | **Navbar** | Sticky glassmorphism bar; hamburger on mobile |
 | **Hero** | Full-height banner with animated glassmorphism card |
 | **Countdown** | Live timer to June 2nd 2026, 6:00 PM IST |
-| **Gallery** | 11 images in responsive CSS Grid + lightbox viewer |
+| **Gallery** | 11 images in masonry-style layout + lightbox viewer |
 | **Venue** | Rayudu Inn details + embedded Google Maps |
-| **RSVP** | Form with WhatsApp integration |
 | **Footer** | Birthday message |
 
 ## Responsive Breakpoints
@@ -38,8 +37,7 @@ Maanvi_Birthday_Invite/
 ## Features Added (Latest Update)
 - ✅ Page loader animation
 - ✅ Scroll-to-top button
-- ✅ Mobile-first CSS Grid gallery (1→2→3→4 columns)
-- ✅ `aspect-ratio: 1/1` for uniform gallery cards
+- ✅ Masonry-style gallery layout for better image fit
 - ✅ Full semantic HTML & ARIA attributes
 - ✅ Keyboard navigation for gallery & lightbox
 - ✅ `rel="noopener noreferrer"` on external links
