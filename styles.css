@@ -251,36 +251,25 @@ body {
   padding: 90px 20px; background: var(--white); text-align: center;
 }
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 18px; max-width: 1100px; margin: 0 auto;
+  columns: 3 250px;
+  column-gap: 18px;
+  max-width: 1100px; margin: 0 auto;
 }
 .gallery-item {
   position: relative; overflow: hidden;
-  border-radius: var(--radius); aspect-ratio: 1;
-  cursor: pointer;
+  border-radius: var(--radius);
   box-shadow: 0 8px 25px var(--shadow-pink);
   border: 3px solid var(--white);
-  transition: transform 0.35s, box-shadow 0.35s;
+  transition: box-shadow 0.35s;
+  break-inside: avoid;
+  margin-bottom: 18px;
 }
 .gallery-item img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.5s;
+  width: 100%; height: auto; display: block;
 }
 .gallery-item:hover {
-  transform: scale(1.03);
   box-shadow: 0 16px 45px rgba(232,138,171,0.3);
 }
-.gallery-item:hover img { transform: scale(1.1); }
-.gallery-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(61,44,62,0.65), transparent 60%);
-  opacity: 0; transition: opacity 0.3s;
-  display: flex; align-items: flex-end; justify-content: center;
-  padding: 16px;
-}
-.gallery-item:hover .gallery-overlay { opacity: 1; }
-.gallery-overlay span { color: var(--white); font-size: 1.6rem; }
 
 /* Placeholder card */
 .gallery-placeholder {
@@ -288,10 +277,13 @@ body {
   align-items: center; justify-content: center;
   background: var(--lavender-light);
   border: 2px dashed var(--lavender);
-  border-radius: var(--radius); aspect-ratio: 1;
+  border-radius: var(--radius); 
+  min-height: 250px; padding: 40px 20px;
   color: var(--text-muted); font-weight: 700;
   font-size: 0.9rem; gap: 10px;
   transition: background 0.3s;
+  break-inside: avoid;
+  margin-bottom: 18px;
 }
 .gallery-placeholder:hover { background: #efe5f7; }
 .gallery-placeholder .placeholder-icon { font-size: 2.4rem; opacity: 0.5; }
