@@ -258,18 +258,31 @@ body {
 .gallery-item {
   position: relative; overflow: hidden;
   border-radius: var(--radius);
+  cursor: pointer;
   box-shadow: 0 8px 25px var(--shadow-pink);
   border: 3px solid var(--white);
-  transition: box-shadow 0.35s;
+  transition: transform 0.35s, box-shadow 0.35s;
   break-inside: avoid;
   margin-bottom: 18px;
 }
 .gallery-item img {
   width: 100%; height: auto; display: block;
+  transition: transform 0.5s;
 }
 .gallery-item:hover {
+  transform: scale(1.03);
   box-shadow: 0 16px 45px rgba(232,138,171,0.3);
 }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(61,44,62,0.65), transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 16px;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span { color: var(--white); font-size: 1.6rem; }
 
 /* Placeholder card */
 .gallery-placeholder {
