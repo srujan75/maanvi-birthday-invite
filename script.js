@@ -96,7 +96,7 @@ drawConfetti();
 
 // ── COUNTDOWN ──
 function updateCountdown() {
-  const target = new Date('2026-06-02T18:00:00+05:30').getTime();
+  const target = new Date('2026-06-02T12:00:00+05:30').getTime();
   const diff   = Math.max(target - Date.now(), 0);
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
